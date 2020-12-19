@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import HomePage from './components/HomePage';
-import logo from './logo.svg';
+import FeedPage from './components/FeedPage';
 import './App.scss';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
             <Route
               exact
               path="/notes"
+              component={FeedPage}
             />
             <Route
               exact

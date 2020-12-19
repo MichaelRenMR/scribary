@@ -1,18 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = props => {
   return (
     <div className="container">
-      <div className="login-page h-100 row">
-        <div className="col" />
-        <div className="col d-flex align-items-center">
-          <div className="card login-container">
+      <div className="home-page h-100 row">
+        <div className="col-3" />
+        <div className="col-6 d-flex align-items-center">
+          <div className="card home-container">
             <div id="welcome">
-              Welcome to our HackUMass project LUL!
+              NOTES POGU
+            </div>
+            <div>
+              <Link to="/notes">View notes</Link>
             </div>
           </div>
         </div>
-        <div className="col" />
+        <div className="col-3" />
       </div>
     </div>
   )
