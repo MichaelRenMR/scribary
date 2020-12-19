@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import HomePage from './components/HomePage';
 import FeedPage from './components/FeedPage';
+import UploadPage from './components/UploadPage';
 import './App.scss';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +16,11 @@ class App extends Component {
               exact
               path="/notes"
               component={FeedPage}
+            />
+            <Route
+              exact
+              path="/submit"
+              component={UploadPage}
             />
             <Route
               exact

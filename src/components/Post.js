@@ -1,20 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import PDFViewer from "./PDFViewer"
 
 const Post = props => {
-  let data = props.data;
-  let defaultImage = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fdominionmartialarts.com%2Fhome%2Fdefault-image%2F&psig=AOvVaw0ll0Q0ZavJkg5DUzRdpmFa&ust=1608433613595000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNDX0aOI2e0CFQAAAAAdAAAAABAD"
+  const { title, school, course, description, fileurl, tags } = props.data;
   return (
-    <div className="card rec-card">
+    <a href={fileurl} target="_blank" className="pdf-anchor card rec-card">
       <div className="">
-        <h5 class="card-title">{data.title}</h5>
+        <h5 class="card-header">{school} - {course}</h5>
+        <h3 class="card-title">{title}</h3>
+        <div class="card-text">
+          {description}
+        </div>
         <div className="d-flex justify-content-center pdf-preview">
           <PDFViewer
-            pdfURL={data.pdfURL}
+            pdfURL={fileurl}
           />
         </div>
       </div>
-    </div>
+    </a>
   )
 }
 

@@ -1,4 +1,5 @@
 import os
+import json
 from flask import Flask, request
 from flask_cors import CORS
 
@@ -14,12 +15,14 @@ def uploadNotes():
         data[key] = val
 
     if('file' not in request.files):
-        return { status: "ERR_MISSING_FILE" }
+        return { "status": "ERR_MISSING_FILE" }
     else:
         f = request.files['file']
         data['file'] = f
 
-    return { status: "SUCCESS"
+    print(data)
+
+    return json.dumps({ "status": "SUCCESS" })
 
 @app.route('/')
 def index():
