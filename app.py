@@ -8,22 +8,18 @@ app.debug = 'DEBUG' in os.environ
 
 @app.route('/upload', methods=['GET', 'POST'])
 def uploadNotes():
-    print(request)
-    print(request.form)
-    print(request.form.get('title'))
-    print(request.form.items())
+    data = dict()
+
     for key, val in request.form.items():
-        print(key)
-        print(val)
+        data[key] = val
+
     if('file' not in request.files):
-        print("oh no")
+        return { status: "ERR_MISSING_FILE" }
     else:
         f = request.files['file']
-        print("oh yes")
-        print(f.filename)
-        print(type(f))
-    print(len(request.form))
-    return "Completed"
+        data['file'] = f
+
+    return { status: "SUCCESS"
 
 @app.route('/')
 def index():
