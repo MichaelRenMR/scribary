@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Upload from "./Upload"
+
 
 const HomePage = props => {
   return (
@@ -11,6 +13,7 @@ const HomePage = props => {
             <div id="welcome">
               NOTES POGU
             </div>
+            <Upload />
             <div>
               <Link to="/notes">View notes</Link>
             </div>
