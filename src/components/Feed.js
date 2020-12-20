@@ -61,7 +61,7 @@ const dummy_data = [
 
 const Feed = props => {
   return (
-    <div className="outer-container">
+    <div className="outer-container overflow-auto">
       <div className="row">
         <div className="card-columns">
           {dummy_data.map(data => {

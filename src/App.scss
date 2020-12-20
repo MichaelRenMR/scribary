@@ -75,6 +75,10 @@ body {
     margin-left: 30px;
   }
 
+  .card-header {
+    font-family: "Lora", sans-serif;
+  }
+
   .card-title {
     text-align: center;
     font-size: 3vw !important;
@@ -84,10 +88,14 @@ body {
     padding-top: 40px;
   }
 
+  .partices {
+    position: fixed;
+  }
+
   .card-text {
     padding-top: 3%;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 12%;
+    padding-right: 12%;
     padding-bottom: 30px;
   }
 
@@ -100,11 +108,11 @@ body {
   }
   
   #welcome {
+    font-family: "Lora", sans-serif;
     font-size: 30px;
     font-weight: bold;
     color: #000000;
     padding: 20px;
-    padding-bottom: 0px;
   }
 
   .home-container {
