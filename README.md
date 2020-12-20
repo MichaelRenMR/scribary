@@ -3,7 +3,7 @@
   <img src="https://raw.githubusercontent.com/mathewjhan/hackumass2020/master/images/logo.png" alt="">
 </p>
 
-[video](https://www.youtube.com/watch?v=V3)
+[video](https://www.youtube.com/watch?v=5xU5P0wlumQ)
 
 [demo](https://scribary.herokuapp.com/)
 
