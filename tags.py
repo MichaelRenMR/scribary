@@ -17,7 +17,7 @@ def classify(result, text, verbose=False):
     categories = response.categories
 
     for category in categories:
-        print(category.name, category.confidence)
+      #  print(category.name, category.confidence)
         # if category.confidence >= 0.7:
         #     print("LARGE CONFIDENCE")
         # splits category name into subcategories
@@ -28,7 +28,7 @@ def classify(result, text, verbose=False):
             result[category_arr[1]] = category.confidence
         else:
             result[category_arr[1]] = max(result[category_arr[1]], category.confidence)
-        print("*******************")
+       # print("*******************")
 
     if verbose:
         for category in categories:
@@ -39,27 +39,27 @@ def classify(result, text, verbose=False):
 
 
 def generate_tags(pdf_path):
-    with open(pdf_path, 'rb') as f:
-        pdf = PdfFileReader(f)
-        result = {}
-        number_of_pages = pdf.getNumPages()
-        for a in range(number_of_pages):
-            page = pdf.getPage(a)
-            text = page.extractText()
-            text = text.split(". ")
-            sentences = ""
-            i = 0
+   # with open(pdf_path, 'rb') as f:
+    pdf = PdfFileReader(pdf_path)
+    result = {}
+    number_of_pages = pdf.getNumPages()
+    for a in range(number_of_pages):
+        page = pdf.getPage(a)
+        text = page.extractText()
+        text = text.split(". ")
+        sentences = ""
+        i = 0
 
-            while i < len(text):
-                sentences = ""
-                while len(sentences) < 300 and i < len(text):
-                    sentences += text[i]
-                    i += 1
-                if len(sentences) >= 175:
-                    result = classify(result, sentences)
-        print(result)
-        print(len(result))
-        return result
+        while i < len(text):
+            sentences = ""
+            while len(sentences) < 300 and i < len(text):
+                sentences += text[i]
+                i += 1
+            if len(sentences) >= 175:
+                result = classify(result, sentences)
+    print(result)
+    print(len(result))
+    return result
 
 
 def main():

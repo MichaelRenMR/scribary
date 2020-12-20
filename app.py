@@ -22,9 +22,9 @@ def uploadNotes():
     else:
         f = request.files['file']
         data['file'] = f
+    
 
-    print(data)
-    backend.upload()
+    backend.upload(data['file'], data['title'], data['description'], data['school'], data['course'])
 
     return json.dumps({ "status": "SUCCESS" })
 

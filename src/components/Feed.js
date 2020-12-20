@@ -1,63 +1,63 @@
 import React, { useState } from "react";
 import Post from "./Post";
 
-const dummy_data = [
-  {
-    title: "Notes from CS220",
-    school: "UMass Amherst",
-    course: "CS220",
-    description: "Notes from my poggers course, I took it with Marius and Jaime in F20 and they may have changed the course material since",
-    fileurl: "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf",
-    tags: [{
-      tagname: "computer science",
-      confidence: 1
-    }]
-  },
-  {
-    title: "Notes from CS220",
-    school: "UMass Amherst",
-    course: "CS220",
-    description: "Notes from my poggers course",
-    fileurl: "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf",
-    tags: [{
-      tagname: "computer science",
-      confidence: 1
-    }]
-  },
-  {
-    title: "Notes from CS220",
-    school: "UMass Amherst",
-    course: "CS220",
-    description: "Notes from my poggers course",
-    fileurl: "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf",
-    tags: [{
-      tagname: "computer science",
-      confidence: 1
-    }]
-  },
-  {
-    title: "Notes from CS220",
-    school: "UMass Amherst",
-    course: "CS220",
-    description: "Notes from my poggers course",
-    fileurl: "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf",
-    tags: [{
-      tagname: "computer science",
-      confidence: 1
-    }]
-  },
-  {
-    title: "Notes from CS220",
-    school: "UMass Amherst",
-    course: "CS220",
-    description: "Notes from my poggers course",
-    fileurl: "https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf",
-    tags: [{
-      tagname: "computer science",
-      confidence: 1
-    }]
-  },
-]
+// const dummy_data = [
+//   {
+//     title: "Notes from CS220",
+//     school: "UMass Amherst",
+//     course: "CS220",
+//     description: "Notes from my poggers course, I took it with Marius and Jaime in F20 and they may have changed the course material since",
+//     file_url: "https://hackumass2020.s3-us-west-1.amazonaws.com/9db3b66632f250efbd61ad43130cf966.pdf",
+//     tags: [{
+//       tagname: "computer science",
+//       confidence: 1
+//     }]
+//   },
+//   {
+//     title: "Notes from CS220",
+//     school: "UMass Amherst",
+//     course: "CS220",
+//     description: "Notes from my poggers course",
+//     file_url: "https://hackumass2020.s3-us-west-1.amazonaws.com/9db3b66632f250efbd61ad43130cf966.pdf",
+//     tags: [{
+//       tagname: "computer science",
+//       confidence: 1
+//     }]
+//   },
+//   {
+//     title: "Notes from CS220",
+//     school: "UMass Amherst",
+//     course: "CS220",
+//     description: "Notes from my poggers course",
+//     file_url: "https://hackumass2020.s3-us-west-1.amazonaws.com/9db3b66632f250efbd61ad43130cf966.pdf",
+//     tags: [{
+//       tagname: "computer science",
+//       confidence: 1
+//     }]
+//   },
+//   {
+//     title: "Notes from CS220",
+//     school: "UMass Amherst",
+//     course: "CS220",
+//     description: "Notes from my poggers course",
+//     file_url: "https://hackumass2020.s3-us-west-1.amazonaws.com/9db3b66632f250efbd61ad43130cf966.pdf",
+//     tags: [{
+//       tagname: "computer science",
+//       confidence: 1
+//     }]
+//   },
+//   {
+//     title: "Notes from CS220",
+//     school: "UMass Amherst",
+//     course: "CS220",
+//     description: "Notes from my poggers course",
+//     file_url: "https://hackumass2020.s3-us-west-1.amazonaws.com/9db3b66632f250efbd61ad43130cf966.pdf",
+//     tags: [{
+//       tagname: "computer science",
+//       confidence: 1
+//     }]
+//   },
+// ]
 
 
 const Feed = props => {
@@ -75,16 +75,15 @@ const Feed = props => {
   }
 
   fetchData(setData);
-  console.log(data);
 
   return (
     <div className="outer-container overflow-auto">
       <div className="row">
         <div className="card-columns">
-          {dummy_data.map(data => {
+          {data.map(item => {
               return (
                 <Post
-                 data={data}
+                 data={item}
                 />
               );
             }
