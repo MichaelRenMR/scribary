@@ -18,7 +18,7 @@ With the importance of notes in mind, we created Scribary, an online platform to
 
 
 <p align="center">  
-  <img src="https://raw.githubusercontent.com/mathewjhan/spotifind/master/images/notes.png">
+  <img src="https://raw.githubusercontent.com/mathewjhan/hackumass2020/master/images/notes.png">
 </p>
 
 ## How we built it
@@ -26,7 +26,7 @@ We built the frontend with **React**, backend with **Python**, and connected the
 
 
 <p align="center">  
-  <img src="https://raw.githubusercontent.com/mathewjhan/hackumass/master/images/scribary.png">
+  <img src="https://raw.githubusercontent.com/mathewjhan/hackumass2020/master/images/scribary.png">
 </p>
 
 ## Challenges we ran into
