@@ -5,7 +5,7 @@
 
 [video](https://www.youtube.com/watch?v=V3)
 
-[demo](https://ivyhacks-spotifind.herokua.com/)
+[demo](https://scribary.herokuapp.com/)
 
 ## Inspiration
 **A common struggle in this remote learning era of university is staying focused during lectures.** Issues with internet connections prevent students from watching lectures consistently. Issues with time zones prevent students from attending synchronous lectures. Even subtle issues such as the sound compression of a video lecture versus the engaging reverberations of a live lecture hall cause students to have difficulty paying attention to lecture. Through all the inconveniences of remote learning, **it is clear that the quality of learning has gone down.** During an in-person semester, students learn from classroom discussions, study groups, and office hours. But with no proper classroom environment, many students lose the motivation to stay engaged with course material, and as a result, take lower quality notes.
