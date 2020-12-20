@@ -41,10 +41,23 @@ You can start the project with the command `heroku local`, which runs `gunicorn`
 One of our greatest difficulties was working with Datastax Astra. Due to our lack of experience working with Cassandra, we had difficulty figuring how their REST query API worked. After hours of reading documentation, we were finally able to create functions that effectively searched the database. Another challenge we came across was linking the backend and frontend. Because some of the data sent over from the frontend was in a complex format, we had to figure out how to correctly serialize the data so that it would be interpreted correctly in the backend.
 
 ## Accomplishments that we're proud of
-**Our biggest accomplishment was being able to combine our React frontend and Python backend using Flask to create a robust application.** We had to stitch together a variety of elements, including sending data both ways between React and Python. Though we initially ran into problems with getting everything to work together nicely, finally connecting all the pieces and seeing it all work in tandem was incredibly rewarding.
+Michael: I’m proud of designing my first web application at a hackathon. Most of my past experience at past hackathons was in embedded systems, so it was a nice change to work on web development! 
+
+
+Maggie: I’m proud of attending my first hackathon!
+
+
+Mathew: I'm proud that we were able to complete a working product. When we first started, I thought there was little chance that we would actually create something functional, but we ended up grinding and finishing.
+
 
 ## What we learned
-This was all our first times using Flask, and we initially had a lot of trouble understanding how exactly Flask sent data between our Python code and our Javascript code. In addition, we were able to brush up on some skills we hadn't used in a while, such as working with the Python requests module and applying the K-nearest neighbors algorithm.
+Mathew: I learned a lot about practices in fetching data. Since the data we needed to POST was relatively complex, I had to perform a lot of data manipulation to get it to work.
+
+
+Maggie: This was my first hackathon, so I learned a lot about how hackathons work, and was also given a basic introduction to machine learning through Google Cloud’s Natural Language API.
+
+
+Michael: I learned about how to build a full stack web application. Setting up communication between React, Flask, AWS, and Datastax Astra was one of the most difficult parts of the project for us, and I learned a lot from it. 
 
 ## What's next for Scribary
 There is so much that can be improved with our idea. In the future, we hope to add search functionality, smarter context creation, and support for other file extensions. In addition, we would like to expand our product to not only notes, but learning resources with student crowdsourced categories to allow students to easily narrow down and share resources with each other.
