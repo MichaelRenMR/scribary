@@ -14,12 +14,17 @@ With time zones and the internet becoming a limiting factor of remote learning, 
 
 
 ## What it does
-With the importance of notes in mind, we created Scribary, an online platform to improve the note-taking experience. Students can upload notes with descriptors such as title course, affiliated university, and course description. Each file upload is then parsed for context using Google Cloud's NLP machine learning API and assigned with relevant category tags, which can later be used by Scribary users to filter results. In the frontend, once a Scribary user finds notes that are relevant to what they want to learn, the file can be directly accessed with one click, allowing a streamlined experience to find the exact notes that they need.
+<p align="center">  
+  <img src="https://raw.githubusercontent.com/mathewjhan/hackumass2020/master/images/upload.png">
+</p>
 
+With the importance of notes in mind, we created Scribary, an online platform to improve the note-taking experience. Students can upload notes with descriptors such as title course, affiliated university, and course description. 
 
 <p align="center">  
   <img src="https://raw.githubusercontent.com/mathewjhan/hackumass2020/master/images/notes.png">
 </p>
+
+Each file upload is then parsed for context using Google Cloud's NLP machine learning API and assigned with relevant category tags, which can later be used by Scribary users to filter results. In the frontend, once a Scribary user finds notes that are relevant to what they want to learn, the file can be directly accessed with one click, allowing a streamlined experience to find the exact notes that they need.
 
 ## How we built it
 We built the frontend with **React**, backend with **Python**, and connected the two through **Flask**. Files are stored in an **AWS S3 bucket** and relevant post information in a **Datastax Astra** database. With the help of **Google Cloud’s Natural Language API**, we predicted tags for each upload and determined relevant categories based on a confidence threshold.
