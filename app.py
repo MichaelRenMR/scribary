@@ -22,7 +22,7 @@ def uploadNotes():
     else:
         f = request.files['file']
         data['file'] = f
-    
+
     print(data)
     backend.upload()
 
