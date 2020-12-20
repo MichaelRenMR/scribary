@@ -35,7 +35,7 @@ Each file upload is then parsed for context using Google Cloud's NLP machine lea
 We built the frontend with **React**, backend with **Python**, and connected the two through **Flask**. Files are stored in an **AWS S3 bucket** and relevant post information in a **Datastax Astra** database. With the help of **Google Cloud’s Natural Language API**, we predicted tags for each upload and determined relevant categories based on a confidence threshold.
 
 <p align="center">  
-  <img src="https://raw.githubusercontent.com/mathewjhan/hackumass2020/master/images/techstack.png">
+  <img src="https://raw.githubusercontent.com/mathewjhan/scribary/master/images/techstack.png">
 </p>
 
 
