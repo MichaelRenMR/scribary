@@ -24,10 +24,10 @@ def classify(result, text, verbose=False):
         category_arr = category.name.split("/")
 
         # Takes the max confidence of that category type
-        if category_arr[-1] not in result.keys():
-            result[category_arr[-1]] = category.confidence
+        if category_arr[1] not in result.keys():
+            result[category_arr[1]] = category.confidence
         else:
-            result[category_arr[-1]] = max(result[category_arr[-1]], category.confidence)
+            result[category_arr[1]] = max(result[category_arr[1]], category.confidence)
         print("*******************")
 
     if verbose:
@@ -57,12 +57,17 @@ def generate_tags(pdf_path):
                     i += 1
                 if len(sentences) >= 175:
                     result = classify(result, sentences)
-
         print(result)
+        print(len(result))
+        return result
+
 
 def main():
-    pdf_path = "/Users/maggieyu/Desktop/umass/healthcare.pdf"
-    generate_tags(pdf_path)
+    pdf_path = "healthcare.pdf"
+    x = generate_tags(pdf_path)
 
 if __name__ == "__main__":
     main()
+
+
+# tags = generate_tags('healthcare.pdf')

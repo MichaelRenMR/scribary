@@ -1,7 +1,9 @@
 import os
 import json
+import backend
 from flask import Flask, request
 from flask_cors import CORS
+
 
 app = Flask(__name__, static_folder='build/', static_url_path='/')
 CORS(app)
@@ -9,6 +11,7 @@ app.debug = 'DEBUG' in os.environ
 
 @app.route('/upload', methods=['GET', 'POST'])
 def uploadNotes():
+    print("called")
     data = dict()
 
     for key, val in request.form.items():
@@ -19,8 +22,9 @@ def uploadNotes():
     else:
         f = request.files['file']
         data['file'] = f
-
+    
     print(data)
+    backend.upload()
 
     return json.dumps({ "status": "SUCCESS" })
 
