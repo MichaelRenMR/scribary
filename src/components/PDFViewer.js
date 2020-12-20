@@ -10,7 +10,6 @@ const PDFViewer = props => {
   const [pageNumber, setPageNumber] = useState(1);
 
   let pdfURL = props.pdfURL;
-  console.log(pdfURL);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Post from "./Post";
 
 const dummy_data = [
@@ -59,7 +59,24 @@ const dummy_data = [
   },
 ]
 
+
 const Feed = props => {
+
+  const [ data, setData ] = useState([]);
+
+  const requestOptions = {
+    method : 'GET',
+  }
+
+  const fetchData = (setData) => {
+    fetch('/fetch', requestOptions)
+      .then(response => response.json())
+      .then(data => setData(data));
+  }
+
+  fetchData(setData);
+  console.log(data);
+
   return (
     <div className="outer-container overflow-auto">
       <div className="row">

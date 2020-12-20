@@ -162,7 +162,6 @@ def get_data():
     f.close()
   return data
 
-
 # def get_data():
 #   auth_token = get_auth_key()
 #   url = "https://2e739356-b1aa-4645-a4ca-90f4097f692c-us-east1.apps.astra.datastax.com/api/rest/v1/keyspaces/keyname/tables/test11/rows/1"

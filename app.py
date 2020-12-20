@@ -1,7 +1,7 @@
 import os
 import json
 import backend
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 
@@ -9,7 +9,7 @@ app = Flask(__name__, static_folder='build/', static_url_path='/')
 CORS(app)
 app.debug = 'DEBUG' in os.environ
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/upload', methods=['POST'])
 def uploadNotes():
     print("called")
     data = dict()
@@ -27,6 +27,10 @@ def uploadNotes():
     backend.upload()
 
     return json.dumps({ "status": "SUCCESS" })
+
+@app.route('/fetch', methods=['GET'])
+def fetchData():
+    return jsonify(backend.get_data())
 
 @app.route('/')
 def index():

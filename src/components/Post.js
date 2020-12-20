@@ -7,9 +7,9 @@ const Post = props => {
   return (
     <a href={fileurl} target="_blank" className="pdf-anchor card rec-card">
       <div className="">
-        <h5 class="card-header">{school} - {course}</h5>
-        <h3 class="card-title">{title}</h3>
-        <div class="card-text">
+        <h5 className="card-header">{school} - {course}</h5>
+        <h3 className="card-title">{title}</h3>
+        <div className="card-text">
           {description}
         </div>
         <div className="d-flex justify-content-center pdf-preview">

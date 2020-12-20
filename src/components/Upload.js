@@ -87,6 +87,7 @@ const Upload = (props) => {
           <Form.File
               id="custom-file"
               label={filename}
+              accept="application/pdf"
               onChange={e => setFilename(e.target.files[0].name)}
               custom
             />
