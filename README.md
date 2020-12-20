@@ -24,10 +24,18 @@ With the importance of notes in mind, we created Scribary, an online platform to
 ## How we built it
 We built the frontend with **React**, backend with **Python**, and connected the two through **Flask**. Files are stored in an **AWS S3 bucket** and relevant post information in a **Datastax Astra** database. With the help of **Google Cloud’s Natural Language API**, we predicted tags for each upload and determined relevant categories based on a confidence threshold.
 
-
 <p align="center">  
   <img src="https://raw.githubusercontent.com/mathewjhan/hackumass2020/master/images/scribary.png">
 </p>
+
+## Documentation
+To reproduce this project locally, first install the necessary libaries with `npm install` and `pip install -r requirements.txt`. You must also have Heroku and the Google Cloud SDK installed to run this project.
+
+
+Make sure you have the environment variable `$GOOGLE_APPLICATION_CREDENTIALS` set up with the Google Cloud Natural Language API. In addition, make sure you set your AWS credentials and Datastax Astra in your environment.
+
+
+You can start the project with the command `heroku local`, which runs `gunicorn` on our Flask app. Go to `localhost:5000` to view the web interface.
 
 ## Challenges we ran into
 One of our greatest difficulties was working with Datastax Astra. Due to our lack of experience working with Cassandra, we had difficulty figuring how their REST query API worked. After hours of reading documentation, we were finally able to create functions that effectively searched the database. Another challenge we came across was linking the backend and frontend. Because some of the data sent over from the frontend was in a complex format, we had to figure out how to correctly serialize the data so that it would be interpreted correctly in the backend.
