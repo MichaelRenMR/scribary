@@ -4,24 +4,23 @@ import PDFViewer from "./PDFViewer";
 import Tags from "./Tags";
 
 const Post = props => {
-  const { title, school, courseid, desc, file_url, tags, hash } = props.data;
+  const { title, school, courseid, desc, file_url, tags, hash, setCurrentTag } = props.data;
   const base = "https://hackumass2020.s3-us-west-1.amazonaws.com/"
   const aws_url = base + hash + ".pdf";  // file_url = hackumass2020/hash.pdf
-  const parsed_tags = JSON.parse(tags);
 
   const sortedTags = () => {
     let sortable = [];
-    for (let item in parsed_tags) {
-      sortable.push([item, parsed_tags[item]]);
+    for (let item in tags) {
+      sortable.push([item, tags[item]]);
     }
 
     sortable.sort(function(a, b) {
-      return a[1] - b[1];
+      return b[1] - a[1];
     });
     return sortable;
   }
 
-  let taglist = sortedTags().filter(item => item[1] >= 0.9);
+  let taglist = sortedTags().filter(item => item[1] >= 0.5);
 
   return (
     <div className="card rec-card">
@@ -37,7 +36,10 @@ const Post = props => {
           />
         </a>
         <div className="card-text">
-          <Tags taglist={taglist} />
+          <Tags 
+            setCurrentTag={(tag) => setCurrentTag(tag)}
+            taglist={taglist} 
+          />
         </div>
       </div>
     </div>

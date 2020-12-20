@@ -63,26 +63,61 @@ import Post from "./Post";
 const Feed = props => {
 
   const [ data, setData ] = useState([]);
+  const [ currentTag, setCurrentTag ] = useState(""); 
+  const tags = ['Health', 'Games', 'News', 'Science', 'Sports']
 
   const requestOptions = {
     method : 'GET',
   }
 
+  const parse_tags = (obj) => {
+    obj.forEach(item => {
+      item['tags'] = JSON.parse(item['tags']);
+    });
+  }
+
   const fetchData = (setData) => {
     fetch('/fetch', requestOptions)
       .then(response => response.json())
-      .then(data => setData(data));
+      .then(data => {
+        parse_tags(data);
+        setData(data);
+      });
   }
 
   fetchData(setData);
 
+  let filteredData = data.filter((item) => {
+    return currentTag === "" || (item['tags'].hasOwnProperty(currentTag) && item['tags'][currentTag] >= 0.5); 
+  });
+
+  const reset = () => {
+    setCurrentTag("");
+  }
+
   return (
     <div className="outer-container overflow-auto">
       <div className="row">
+        <div id="welcome">
+          Scribary
+        </div>
+      </div>
+      <div className = "row mx-3">
+        <div className="btn-group tagButtons" style={{"margin-bottom": "20px"}}>
+          {tags.map(tag => {
+            return (
+              <button type="button" className="btn btn-info tag-button" onClick={() => setCurrentTag(tag)}>{tag}</button>
+            );
+          })}
+          <button className="btn mx-2 btn-danger tag-button" onClick={reset}>Reset filters</button>
+        </div>
+      </div>
+      <div className="row">
         <div className="card-columns">
-          {data.map(item => {
+          {filteredData.map(item => {
               return (
                 <Post
+                 setCurrentTag={(tag) => setCurrentTag(tag)}
                  data={item}
                 />
               );
